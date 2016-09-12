@@ -1,0 +1,73 @@
+<doctype>
+<html>
+<head>
+<style>
+table#t01,td{border:1px solid green;background-color:navyblue;}
+tr, td {
+    padding: 5px;
+    text-align: center; 
+    background-color:green;
+    	
+}
+</style>
+<script language="javascript" type="text/javascript">
+function AddValues()
+{
+document.getElementById("txtResult").value=
+parseInt(document.getElementById("txtFN").value) + parseInt(document.getElementById("txtSN").value);
+}
+function SubValues()
+{
+document.getElementById("txtResult").value=
+parseInt(document.getElementById("txtFN").value) - parseInt(document.getElementById("txtSN").value);
+}
+function MulValues()
+{
+document.getElementById("txtResult").value=
+parseInt(document.getElementById("txtFN").value) * parseInt(document.getElementById("txtSN").value);
+}
+function DivValues()
+{
+document.getElementById("txtResult").value=
+parseInt(document.getElementById("txtFN").value) / parseInt(document.getElementById("txtSN").value);
+}
+function PowValues()
+{
+var a,b,result=1,i;
+a=parseInt(document.getElementById("txtFN").value);
+b=parseInt(document.getElementById("txtSN").value);
+for(i=1;i<=b;i++)
+{
+result=result*a
+}
+document.getElementById("txtResult").value=result;
+}
+function Clear()                
+ { 
+ document.getElementById("txtFN").value="";
+ document.getElementById("txtSN").value="";
+ document.getElementById("txtResult").value="";
+ }
+</script>
+</head>
+<body>
+<table border="1" width="10%" id="t01">
+<tr>
+<td colspan="5">calculator</td>
+</tr>
+<tr>
+<td colspan="2">First number:</td><td colspan="3"><input type="text" id="txtFN"></input><br /></td>
+</tr>
+<tr><td colspan="2">Second number:</td><td colspan="3"><input type="text" id="txtSN"></input><br /></td></tr>
+<tr>
+<td><input type="button" id="btnAdd" value="+" onclick="return AddValues();"></input></td>
+<td><input type="button" id="btnSub" value="-" onclick="return SubValues();"></input></td>
+<td><input type="button" id="btnMul" value="*" onclick="return MulValues();"></input></td>
+<td><input type="button" id="btnDiv" value="/" onclick="return DivValues();"></input></td>
+<td><input type="button" id="btnPow" value="^" onclick="return PowValues();"></input></td>
+</tr>
+<tr><td colspan="2">Result:</td><td colspan="2"><input type="text" id="txtResult"></input></td>
+<td><input type="button" value="Clear" onclick="Clear();"></input></td></tr>
+</table>
+</body>
+</html>
